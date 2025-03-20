@@ -1,34 +1,17 @@
-import Qoutes from "./components/Qoutes";
-import { useState } from "react";
+import Form from "./components/Form";
+import GenerateQoute from "./components/GenerateQoute";
 
 function App() {
-  const [quote, setQuote] = useState("");
-  const [rating, setRating] = useState("");
+  function handleSubmit() {
+    console.log("Form Submitted");
+  }
 
-  const handleSubmit = (e) => {
-    setQuote(quote);
-    setRating(rating);
-    e.preventDefault();
-  };
   return (
     <>
-      <form action="" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          onChange={setQuote}
-          placeholder="Qoute"
-          value={quote}
-        />
-        <input
-          type="text"
-          onChange={setRating}
-          placeholder="Rating"
-          value={rating}
-        />
-        <button>Submit</button>
-      </form>
-
-      <Qoutes quotes={quote} rating={rating} />
+      <div className="">
+        <Form handleSubmit={handleSubmit} />
+        <GenerateQoute />
+      </div>
     </>
   );
 }
